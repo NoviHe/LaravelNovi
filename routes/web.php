@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 route::prefix('admin')->group(function(){
 	route::get('/', function(){
-		return view('admin.main'); 
+		return view('admin.pages.dashboard'); 
 	})->name('admin.home');
 });
 
