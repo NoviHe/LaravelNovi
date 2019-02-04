@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-route::prefix('admin')->group(function(){
-	route::get('/', function(){
-		return view('admin.pages.dashboard'); 
-	})->name('admin.home');
+route::group(['middleware'=>['auth']], function(){
+	route::prefix('admin')->group(function(){
+		route::get('/', function(){
+			return view('admin.pages.dashboard'); 
+		})->name('admin.home');
+	});
 });
+
 
 Auth::routes();
 
