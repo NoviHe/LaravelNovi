@@ -20,10 +20,12 @@ route::group(['middleware'=>['auth']], function(){
 		route::get('/', function(){
 			return view('admin.pages.dashboard'); 
 		})->name('admin.home');
+	route::prefix('user')->group(function(){
+		route::get('/setting','UserSettingController@form')->name('admin.user.setting');
+	});
 	});
 });
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
