@@ -435,3 +435,6 @@ Stack trace:
 #58 C:\xampp\htdocs\Tokap\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #59 C:\xampp\htdocs\Tokap\server.php(21): require_once('C:\\xampp\\htdocs...')
 #60 {main}  
+[2019-02-17 21:10:22] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\Tokap\routes\web.php:40
+Stack trace:
+#0 {main}  
