@@ -303,3 +303,6 @@ Stack trace:
 [2019-02-17 17:08:46] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\Tokap\storage\framework\views\8f28cfa9d3ca49e1de9550c314fed9f68232d2ae.php:46
 Stack trace:
 #0 {main}  
+[2019-02-17 19:37:55] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in C:\xampp\htdocs\Tokap\app\Http\Controllers\UserController.php:19
+Stack trace:
+#0 {main}  
