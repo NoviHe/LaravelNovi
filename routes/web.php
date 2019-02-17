@@ -21,7 +21,9 @@ route::group(['middleware'=>['auth']], function(){
 			return view('admin.pages.dashboard'); 
 		})->name('admin.home');
 	route::prefix('user')->group(function(){
-		route::get('/','UserController@daftar')->name('admin.user');
+
+		route::get('/','UserController@daftar')->name('admin.user')->middleware('akses.admin');
+		
 		route::get('/setting','UserSettingController@form')->name('admin.user.setting');
 		route::post('/setting','UserSettingController@update');
 		});
