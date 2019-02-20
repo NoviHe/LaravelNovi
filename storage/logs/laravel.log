@@ -438,3 +438,13 @@ Stack trace:
 [2019-02-17 21:10:22] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\Tokap\routes\web.php:40
 Stack trace:
 #0 {main}  
+[2019-02-20 21:10:33] local.ERROR: exception 'Symfony\Component\Console\Exception\CommandNotFoundException' with message 'Command "se" is ambiguous.
+Did you mean one of these?
+    session:table Create a migration for the session database table
+    serve         Serve the application on the PHP development server' in C:\xampp\htdocs\Tokap\vendor\symfony\console\Application.php:650
+Stack trace:
+#0 C:\xampp\htdocs\Tokap\vendor\symfony\console\Application.php(229): Symfony\Component\Console\Application->find('se')
+#1 C:\xampp\htdocs\Tokap\vendor\symfony\console\Application.php(148): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 C:\xampp\htdocs\Tokap\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 C:\xampp\htdocs\Tokap\artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
