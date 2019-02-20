@@ -26,6 +26,11 @@ route::group(['middleware'=>['auth']], function(){
 
 		route::get('/add','UserController@add')->name('admin.user.add')->middleware('akses.admin');
 		route::post('/add','UserController@save')->middleware('akses.admin');
+
+		route::get('/edit/{id}','UserController@edit')->name('admin.user.edit')
+				->middleware('akses.admin');
+		route::post('/edit/{id}','UserController@update')
+				->middleware('akses.admin');
 		
 		route::get('/setting','UserSettingController@form')->name('admin.user.setting');
 		route::post('/setting','UserSettingController@update');
