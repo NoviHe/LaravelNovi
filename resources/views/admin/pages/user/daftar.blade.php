@@ -9,6 +9,14 @@
 	<button type="button" class="close" data-dismiss="alert">&times;</button>
 </div>
 @endif
+
+@if(session('result') == 'Upadted')
+<div class="alert alert-success alert-dismissible fade show">
+	<strong>Upadted!</strong> Berhasil DiUpdate.
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+</div>
+@endif
+
 <div class="row">
 	<div class="col-md-6 mb-3">
 		<a href="{{ route('admin.user.add') }}" class="btn btn-primary">[+] Tambah</a>
