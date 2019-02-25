@@ -10,16 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*ad*/
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-route::group(['middleware'=>['auth']], function(){
-	route::prefix('admin')->group(function(){
-		route::get('/', function(){
+route::group(['prefix'=>'admin','middleware'=>['auth']], function(){
+	
+	route::get('/', function(){
 			return view('admin.pages.dashboard'); 
 		})->name('admin.home');
+
+	/* user */
 	route::prefix('user')->group(function(){
 
 		route::get('/','UserController@daftar')->name('admin.user')->middleware('akses.admin');
@@ -29,13 +32,16 @@ route::group(['middleware'=>['auth']], function(){
 		route::post('/add','UserController@save')->middleware('akses.admin');
 
 		route::get('/edit/{id}','UserController@edit')->name('admin.user.edit')
-				->middleware('akses.admin');
+					->middleware('akses.admin');
 		route::post('/edit/{id}','UserController@update')
-				->middleware('akses.admin');
-		
+					->middleware('akses.admin');
+			
 		route::get('/setting','UserSettingController@form')->name('admin.user.setting');
 		route::post('/setting','UserSettingController@update');
-		});
+	});
+	/*kategory*/
+	route::group(['prefix'=>'kategori','middleware'=>'akses.admin'], function(){
+		route::get('/','KategoriController@daftar')->name('admin.kategori');
 	});
 });
 
