@@ -10,9 +10,23 @@
 </div>
 @endif
 
-@if(session('result') == 'Upadted')
+@if(session('result') == 'Update')
 <div class="alert alert-success alert-dismissible fade show">
-	<strong>Upadted!</strong> Berhasil DiUpdate.
+	<strong>Upadted!</strong> Berhasil Diupdate.
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+</div>
+@endif
+
+@if(session('result') == 'delete')
+<div class="alert alert-success alert-dismissible fade show">
+	<strong>Upadted!</strong> Berhasil Dihapus.
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+</div>
+@endif
+
+@if(session('result') == 'fail-delete')
+<div class="alert alert-danger alert-dismissible fade show">
+	<strong>Upadted!</strong> Gagal DiUpdate.
 	<button type="button" class="close" data-dismiss="alert">&times;</button>
 </div>
 @endif
@@ -89,7 +103,7 @@
 
 			<div class="modal-body">
 				apakah anda yakin ingin menghapusnya?
-				<form id="form-delete" method="POST" action="#">
+				<form id="form-delete" method="POST" action="{{ route('admin.user')}}">
 					{{ csrf_field() }}
 					{{ method_field('delete') }}
 					<input type="hidden" name="id" id="input-id">
@@ -115,7 +129,7 @@
 		});
 
 		$('.btn-delete').click(function () {
-			alert($('#input-id').val() );
+			$('#form-delete').submit();
 		});
 	})
 </script>
